@@ -1,0 +1,70 @@
+### Register User
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+  "account": "user1",
+  "password": "password123",
+  "balance": 100
+}
+
+### Login User
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+  "account": "user1",
+  "password": "password123"
+}
+
+### Post a Job
+POST http://localhost:3000/job/post
+Content-Type: application/json
+
+{
+  "user": "user1",
+  "title": "Plumber Needed",
+  "content": "Fix the leaking pipe.",
+  "price": 50
+}
+
+### View Jobs
+GET http://localhost:3000/job/view?key=Plumber
+
+### Apply for Job
+POST http://localhost:3000/job/apply
+Content-Type: application/json
+
+{
+  "account": "user1",
+  "no": 1
+}
+
+### Approve Job
+POST http://localhost:3000/job/approve
+Content-Type: application/json
+
+{
+  "no": 1,
+  "account1": "user2",
+  "account2": "user1",
+  "money": 50
+}
+
+### Finish Job
+POST http://localhost:3000/job/finish
+Content-Type: application/json
+
+{
+  "no": 1
+}
+
+### Pay for Job
+POST http://localhost:3000/job/pay
+Content-Type: application/json
+
+{
+  "no": 1,
+  "account": "user1",
+  "money": 50
+}
